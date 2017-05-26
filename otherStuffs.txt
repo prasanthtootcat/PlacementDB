@@ -1,0 +1,169 @@
+Views 
+
+//Interns
+create view interns as 
+select name,name_of_company,no_of_months from 
+student s,attends a,internship i 
+where s.s_id=a.student_id and a.intern_id=i.intern_id;
+
+//ninePointers
+create view ninePointers as
+select distinct s.name as student,d.name as department,cgpa from
+student s,department d,academics a
+where s.s_id=a.student_id and
+d.d_id=s.department_id and cgpa>=9
+order by cgpa desc;
+
+//pro
+
+create view pro as select name,p_name,marks_for_project 
+from student s,project p where s.s_id=p.student_id;
+
+Procedure
+
+//placed
+
+create or replace function placed(i integer) 
+returns void as $$
+declare
+v_name varchar(20);
+n_id integer;
+ncur cursor for
+select s.name,c.company_id from student s,hires h,company c where
+s.s_id=h.student_id and c.company_id=h.company_id
+and h.status='yes';
+
+begin
+open ncur;
+loop
+fetch ncur into v_name,n_id;
+if not found then
+	exit;
+end if;
+if(n_id=i) then
+	raise notice '%',v_name;
+end if;
+end loop;
+close ncur;
+end;
+$$ language plpgsql;
+
+Function:
+
+//backlog
+
+create or replace function backlog(id integer) returns integer as $$
+declare
+n_id integer;
+n_arrears integer;
+ncur cursor for select no_of_arrears,s.s_id from student s, academics a
+where s.s_id=a.student_id;
+begin
+open ncur;
+loop
+fetch ncur into n_arrears,n_id;
+if not found then
+exit;
+end if;
+if(id=n_id) then
+return n_arrears;
+end if;
+end loop;
+close ncur;
+end;
+$$ language plpgsql;
+
+//written exam score
+
+create or replace function exam(id integer) returns integer as $$
+declare
+n_id integer;
+n_marks integer;
+ncur cursor for select s_id,exam_marks from student;
+begin
+open ncur;
+loop
+fetch ncur into n_id,n_marks;
+if not found then
+exit;
+end if;
+if(n_id=id) then
+return n_marks;
+end if;
+end loop;
+close ncur;
+end;
+$$ language plpgsql;
+
+
+// salary package offered in intern
+//sal
+
+create or replace function sal(name varchar(20)) returns integer as $$
+declare
+v_name varchar(20);
+n_sal integer;
+ncur cursor for select name_of_company,salary from internship;
+begin
+open ncur;
+loop
+fetch ncur into v_name,n_sal;
+if not found then
+exit;
+end if;
+if(v_name=name) then 
+return n_sal;
+end if;
+end loop;
+close ncur;
+return null;
+end;
+$$ language plpgsql;
+
+
+
+
+Trigger
+
+
+//maintains history of deleted project list
+
+
+create trigger t1_pd
+before delete
+on project
+for each row
+execute procedure f1_pd();
+
+create or replace function f1_pd()
+returns trigger as $$
+begin
+insert into project_history values(old.p_name);
+return old;
+end;
+$$language plpgsql;
+
+
+create table project_history
+(p_name varchar(40));
+
+//maintains history of deans
+
+create trigger t2_pd
+before update or delete
+on college
+for each row
+execute procedure f2_pd();
+
+create or replace function f2_pd()
+returns trigger as $$
+begin
+insert into dean values(old.dean);
+return old;
+end;
+$$language plpgsql;
+
+create table dean
+(
+dean varchar(20)
+);

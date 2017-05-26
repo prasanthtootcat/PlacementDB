@@ -1,0 +1,234 @@
+insert into college values(0001,'CEG','Autonomous','Narayanasamy');
+insert into college values(1315,'SSN','Affiliated','Kasthuri');
+insert into college values(2006,'PSG','Autonomous','Ragupathy');
+insert into college values(2007,'CIT','Autonomous','Shanmugam');
+
+insert into department values(101,'CSE','Manjula',0001);
+insert into department values(102,'IT','Swaminathan',0001);
+insert into department values(103,'EEE','Yuvapriya',0001);
+insert into department values(101,'CSE','Prasanth',2006);
+insert into department values(104,'ECE','Aravind',2006);
+insert into department values(103,'EEE','Krishna',1315);
+insert into department values(105,'Mech','Mugilan',1315);
+insert into department values(101,'CSE','Praveen Kumar',2007);
+insert into department values(104,'ECE','Aadharsh',2007);
+insert into department values(105,'Mech','Ratheesh',2007);
+
+
+insert into course values(201,'FT',101,0001);
+insert into course values(202,'PT',101,0001);
+insert into course values(201,'FT',102,0001);
+insert into course values(201,'FT',103,0001);
+insert into course values(201,'PT',101,2006);
+insert into course values(201,'FT',104,2006);
+insert into course values(202,'PT',104,2006);
+insert into course values(201,'FT',103,1315);
+insert into course values(202,'FT',103,1315);
+insert into course values(201,'PT',105,1315);
+insert into course values(201,'FT',101,2007);
+insert into course values(201,'FT',105,2007);
+insert into course values(201,'PT',104,2007);
+insert into course values(202,'PT',105,2007);
+
+
+insert into internship values(301,'Microsoft',6,60000);
+insert into internship values(302,'Google',2,80000);
+insert into internship values(303,'Infocys',1,15000);
+insert into internship values(304,'TCS',4,10000);
+insert into internship values(305,'Amazon',3,40000);
+
+
+
+insert into company values(401,'Microsoft','Banglore',9.5);
+insert into company values(402,'Google','Banglore',9);
+insert into company values(403,'Infocys','Chennai',7.5);
+insert into company values(404,'TCS','Coimbatore',6.5);
+insert into company values(405,'Amazon','Chennai',8.5);
+insert into company values(406,'Wipro','Coimbatore',8.0);
+insert into company values(407,'CTS','Coimbatore',7);
+
+
+insert into interviewer values(501,'Jagan',402);
+insert into interviewer values(502,'Vijay',401);
+insert into interviewer values(503,'Ajith',401);
+insert into interviewer values(504,'Surya',402);
+insert into interviewer values(505,'Malar',403);
+insert into interviewer values(506,'Anamika',404);
+insert into interviewer values(507,'Nandhini',405);
+insert into interviewer values(508,'Roshini',406);
+insert into interviewer values(509,'Bharathi',407);
+insert into interviewer values(510,'Divya',405);
+
+
+insert into student values(1001,'Dhawan',19,201,101,0001,50,'m');
+insert into student values(1002,'Sharma',35,202,101,0001,85,'m');
+insert into student values(1003,'Sehwag',22,201,102,0001,92,'m');
+insert into student values(1004,'Sachein',24,201,103,0001,82,'m');
+insert into student values(1005,'Kohli',21,201,103,1315,85,'m');
+insert into student values(1006,'Yuvaraj',30,202,103,1315,87,'m');
+insert into student values(1007,'Dhoni',23,201,105,1315,94,'m');
+insert into student values(1008,'Raina',20,201,101,2006,90,'m');
+insert into student values(1009,'Ashwin',18,201,104,2006,93,'m');
+insert into student values(1010,'Jadeja',35,202,104,2006,93,'m');
+insert into student values(1011,'Chahal',28,201,101,2007,75,'m');
+insert into student values(1012,'Rahane',27,201,104,2007,78,'m');
+insert into student values(1013,'Pujara',22,201,105,2007,69,'m');
+insert into student values(1014,'Karthik',21,202,105,2007,65,'m');
+insert into student values(1015,'Mayuri',19,201,101,0001,89,'f');
+insert into student values(1016,'Madhu',35,202,101,0001,67,'f');
+insert into student values(1017,'Vidya',22,201,102,0001,92,'f');
+insert into student values(1018,'Janani',24,201,103,0001,77,'f');
+insert into student values(1019,'Rina',21,201,103,1315,57,'f');
+insert into student values(1020,'Yazhini',30,202,103,1315,75,'f');
+insert into student values(1021,'Suha',23,201,105,1315,84,'f');
+insert into student values(1022,'Ramya',20,201,101,2006,82,'f');
+insert into student values(1023,'Surabi',18,201,104,2006,90,'f');
+insert into student values(1024,'Madhavi',35,202,104,2006,59,'f');
+insert into student values(1025,'Nivetha',28,201,101,2007,68,'f');
+insert into student values(1026,'Saranya',27,201,104,2007,83,'f');
+insert into student values(1027,'Kasthuri',22,201,105,2007,85,'f');
+insert into student values(1028,'Priyanka',21,202,105,2007,89,'f');
+
+
+insert into academics values(601,8.6,0,1001);
+insert into academics values(602,7.9,2,1002);
+insert into academics values(603,9.5,0,1003);
+insert into academics values(604,6.5,4,1004);
+insert into academics values(605,8.5,0,1005);
+insert into academics values(606,9.0,0,1006);
+insert into academics values(607,6.2,6,1007);
+insert into academics values(608,9.3,0,1008);
+insert into academics values(609,7.4,2,1009);
+insert into academics values(610,6.7,3,1010);
+insert into academics values(611,8.9,0,1011);
+insert into academics values(612,5.6,10,1012);
+insert into academics values(613,7.7,1,1013);
+insert into academics values(614,8.9,1,1014);
+insert into academics values(615,9.9,0,1015);
+insert into academics values(616,8.7,0,1016);
+insert into academics values(617,7.8,1,1017);
+insert into academics values(618,7.5,2,1018);
+insert into academics values(619,6.9,5,1019);
+insert into academics values(620,7.6,0,1020);
+insert into academics values(621,8.4,2,1021);
+insert into academics values(622,9.3,1,1022);
+insert into academics values(623,9.7,0,1023);
+insert into academics values(624,5.7,7,1024);
+insert into academics values(625,8.4,0,1025);
+insert into academics values(626,7.0,1,1026);
+insert into academics values(627,6.7,0,1027);
+insert into academics values(628,9.4,2,1028);
+
+
+
+insert into project values(701,'Bug Tracking System',86,1001);
+insert into project values(702,'Encryption-Decryption',79,1002);
+insert into project values(703,'Image Processing',95,1003);
+insert into project values(708,'Data and Video Streaming',93,1008);
+insert into project values(709,'DTMF Controlled Robot',74,1009);
+insert into project values(710,'Metal Detecting Robot',67,1010);
+insert into project values(711,'Proces Management',89,1011);
+insert into project values(712,'Password based Jammer',56,1012);
+insert into project values(715,'E-learning-Web portal',99,1014);
+insert into project values(716,'Employee Tracking System',87,1015);
+insert into project values(717,'HOC Networks',78,1016);
+insert into project values(722,'FTP Implementation',93,1021);
+insert into project values(723,'Realtime Traffic updates',97,1022);
+insert into project values(724,'Solar Lighting System',57,1023);
+insert into project values(725,'Graphical Network Browser',84,1024);
+insert into project values(726,'Solar Battersy Charger',70,1025);
+
+
+insert into attends values(1001,305);
+insert into attends values(1002,303);
+insert into attends values(1003,301);
+insert into attends values(1004,304);
+insert into attends values(1005,305);
+insert into attends values(1006,302);
+insert into attends values(1007,304);
+insert into attends values(1008,302);
+insert into attends values(1009,303);
+insert into attends values(1010,304);
+insert into attends values(1011,305);
+insert into attends values(1012,304);
+insert into attends values(1013,303);
+insert into attends values(1014,305);
+insert into attends values(1015,301);
+insert into attends values(1016,305);
+insert into attends values(1017,303);
+insert into attends values(1018,303);
+insert into attends values(1019,304);
+insert into attends values(1020,303);
+insert into attends values(1021,305);
+insert into attends values(1022,302);
+insert into attends values(1023,301);
+insert into attends values(1024,304);
+insert into attends values(1025,305);
+insert into attends values(1026,304);
+insert into attends values(1027,304);
+insert into attends values(1028,301);
+
+
+
+insert into interviews values(507,405,1001);
+insert into interviews values(505,403,1002);
+insert into interviews values(502,401,1003);
+insert into interviews values(506,404,1004);
+insert into interviews values(510,405,1005);
+insert into interviews values(501,405,1006);
+insert into interviews values(506,402,1007);
+insert into interviews values(504,404,1008);
+insert into interviews values(509,402,1009);
+insert into interviews values(506,407,1010);
+insert into interviews values(507,405,1011);
+insert into interviews values(506,404,1012);
+insert into interviews values(505,403,1013);
+insert into interviews values(510,405,1014);
+insert into interviews values(502,401,1015);
+insert into interviews values(507,405,1016);
+insert into interviews values(505,403,1017);
+insert into interviews values(505,403,1018);
+insert into interviews values(506,404,1019);
+insert into interviews values(505,403,1020);
+insert into interviews values(508,406,1021);
+insert into interviews values(501,402,1022);
+insert into interviews values(503,401,1023);
+insert into interviews values(506,404,1024);
+insert into interviews values(508,406,1025);
+insert into interviews values(509,407,1026);
+insert into interviews values(506,404,1027);
+insert into interviews values(502,401,1028);
+
+
+
+insert into hires values(405,1001,'yes');
+insert into hires values(403,1002,'no');
+insert into hires values(401,1003,'yes');
+insert into hires values(404,1004,'yes');
+insert into hires values(405,1005,'no');
+insert into hires values(405,1006,'yes');
+insert into hires values(402,1007,'yes');
+insert into hires values(404,1008,'no');
+insert into hires values(402,1009,'no');
+insert into hires values(407,1010,'yes');
+insert into hires values(405,1011,'yes');
+insert into hires values(404,1012,'no');
+insert into hires values(403,1013,'yes');
+insert into hires values(405,1014,'yes');
+insert into hires values(401,1015,'no');
+insert into hires values(405,1016,'yes');
+insert into hires values(403,1017,'yes');
+insert into hires values(403,1018,'no');
+insert into hires values(404,1019,'no');
+insert into hires values(403,1020,'yes');
+insert into hires values(406,1021,'no');
+insert into hires values(402,1022,'yes');
+insert into hires values(401,1023,'yes');
+insert into hires values(404,1024,'yes');
+insert into hires values(406,1025,'no');
+insert into hires values(407,1026,'yes');
+insert into hires values(404,1027,'yes');
+insert into hires values(401,1028,'no');
+
+
+
